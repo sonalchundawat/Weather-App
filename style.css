@@ -30,6 +30,10 @@ body {
   background-color: #222831;
   color: #ffffff;
   height: 400px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 900px;
 }
 
 .weather-side {
@@ -111,6 +115,7 @@ body {
   float: left;
   height: 100%;
   padding-top: 25px;
+  width: calc(100% - 300px);
 }
 
 .today-info {
@@ -211,4 +216,55 @@ body {
 
 .location-input:hover {
   transform: scale(0.95);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .weather-side {
+    width: 100%;
+    height: 200px;
+    border-radius: 25px 25px 0 0;
+  }
+
+  .info-side {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .weather-temp {
+    font-size: 2.5em;
+  }
+
+  .today-info {
+    margin: 10px;
+  }
+
+  .week-list>li {
+    width: 50%;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .weather-side {
+    height: 150px;
+  }
+
+  .info-side {
+    padding-top: 0;
+  }
+
+  .weather-temp {
+    font-size: 2em;
+  }
+
+  .week-list>li {
+    width: 100%;
+    padding: 8px;
+  }
 }
